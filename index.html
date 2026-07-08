@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keratin Galicia - Hair Reconstruction | Irina</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-pink: #D88CA6;
+            --light-pink: #FBEAF0;
+            --text-dark: #333;
+            --text-light: #666;
+            --white: #FFFFFF;
+            --border: #E8E8E8;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        /* Language Switcher */
+        .lang-switcher {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            gap: 8px;
+            background: var(--light-pink);
+            padding: 8px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 4px 8px;
+            border-radius: 12px;
+            transition: all 0.3s;
+            color: var(--text-dark);
+        }
+
+        .lang-btn.active {
+            background: var(--primary-pink);
+            color: var(--white);
+        }
+
+        /* Header */
+        header {
+            padding: 20px;
+            background: var(--white);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+
+        nav a {
+            margin-left: 30px;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-pink);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--light-pink) 0%, var(--white) 100%), radial-gradient(circle at 10% 10%, rgba(216,140,166,0.06), transparent 20%);
+            padding: 40px 16px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .hero-image {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            margin-bottom: 18px;
+            border: 3px solid var(--primary-pink);
+            object-fit: cover;
+            box-shadow: 0 6px 20px rgba(216,140,166,0.08);
+        }
+
+        .hero h1 {
+            font-size: 40px;
+            margin-bottom: 10px;
+            color: var(--text-dark);
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        .cta-button {
+            background: linear-gradient(90deg,var(--primary-pink),#c77191);
+            color: var(--white);
+            padding: 12px 34px;
+            border: none;
+            border-radius: 40px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.25s, box-shadow 0.25s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 18px rgba(216,140,166,0.12);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.01);
+            box-shadow: 0 12px 30px rgba(199,113,145,0.18);
+        }
+
+        /* Trust Section */
+        .trust {
+            padding: 36px 16px;
+            background: var(--white);
+        }
+
+        .trust-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .trust h2 {
+            font-size: 28px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .trust-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .trust-item {
+            text-align: center;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .trust-item h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+            color: var(--primary-pink);
+        }
+
+        .trust-item p {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        .trust-item::before {
+            content: "";
+            display: block;
+            width: 44px;
+            height: 4px;
+            background: linear-gradient(90deg,var(--primary-pink),#c77191);
+            margin: 0 auto 12px auto;
+            border-radius: 4px;
+            opacity: 0.95;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 36px 16px;
+            background: var(--light-pink);
+        }
+
+        .services-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            font-size: 28px;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 22px;
+            border-radius: 12px;
+            text-align: left;
+            box-shadow: 0 4px 18px rgba(0,0,0,0.06);
+            transition: transform 0.25s, box-shadow 0.25s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--primary-pink);
+            text-align: center;
+        }
+
+        .service-card .description {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 12px;
+            line-height: 1.45;
+        }
+
+        .service-card .technique {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 8px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        .service-card .benefits {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .service-card .benefits-title {
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 12px;
+            margin-top: 8px;
+            margin-bottom: 5px;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-pink);
+            text-align: center;
+            margin-top: 12px;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 36px 16px;
+            background: var(--white);
+        }
+
+        .gallery-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gallery h2 {
+            font-size: 28px;
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 14px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            height: 260px;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.35s, filter 0.35s;
+            filter: saturate(0.98) contrast(0.98);
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.06);
+            filter: saturate(1.05) contrast(1.03);
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 36px 16px;
+            background: var(--light-pink);
+        }
+
+        .pricing-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            font-size: 28px;
+            margin-bottom: 18px;
+            text-align: center;
+        }
+
+        .pricing-table {
+            background: var(--white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 28px rgba(0,0,0,0.06);
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            border-bottom: 1px solid var(--border);
+            padding: 14px 18px;
+            align-items: center;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-row.header {
+            background: linear-gradient(90deg,var(--primary-pink),#c77191);
+            color: var(--white);
+            font-weight: 600;
+        }
+
+        .pricing-price {
+            text-align: right;
+            font-weight: 700;
+            color: var(--primary-pink);
+        }
+
+        /* CTA Section */
+        .final-cta {
+            padding: 36px 16px;
+            background: linear-gradient(135deg, var(--primary-pink) 0%, #c77191 100%);
+            color: var(--white);
+            text-align: center;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .final-cta-content {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .final-cta p {
+            font-size: 16px;
+            margin-bottom: 18px;
+            opacity: 0.95;
+        }
+
+        .cta-button-light {
+            background: var(--white);
+            color: var(--primary-pink);
+            padding: 12px 28px;
+            border: none;
+            border-radius: 32px;
+            font-size: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 6px 18px rgba(199,113,145,0.12);
+        }
+
+        .cta-button-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(199,113,145,0.18);
+        }
+
+        /* Footer */
+        footer {
+            background: #f5f5f5;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .social-links {
+            margin: 20px 0;
+        }
+
+        .social-links a {
+            display: inline-block;
+            margin: 0 15px;
+            color: var(--primary-pink);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #c77191;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin: 10px 0;
+        }
+
+        /* Section header decoration */
+        .services h2, .trust h2, .gallery h2, .pricing h2 {
+            position: relative;
+            display: inline-block;
+        }
+        .services h2::after, .trust h2::after, .gallery h2::after, .pricing h2::after {
+            content: "";
+            display: block;
+            height: 6px;
+            width: 80px;
+            background: linear-gradient(90deg,var(--primary-pink),#c77191);
+            border-radius: 4px;
+            margin: 10px auto 0 auto;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero p {
+                font-size: 16px;
+            }
+
+            .services h2,
+            .gallery h2,
+            .pricing h2 {
+                font-size: 24px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+
+            .pricing-price {
+                text-align: left;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .final-cta h2 {
+                font-size: 24px;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="ru">РУ</button>
+        <button class="lang-btn" data-lang="en">EN</button>
+        <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">Keratin Galicia</div>
+            <nav>
+                <a href="#trust" data-key="nav_about">О процедурах</a>
+                <a href="#services" data-key="nav_services">Услуги</a>
+                <a href="#gallery" data-key="nav_gallery">Портфолио</a>
+                <a href="#pricing" data-key="nav_pricing">Цены</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <img src="images/irina.png" alt="Irina" class="hero-image">
+            <h1 data-key="hero_title">Восстановление волос методом кератина</h1>
+            <p data-key="hero_subtitle">Профессиональное восстановление волос с использованием премиум материалов в Ла Коруньи</p>
+            <button class="cta-button" data-key="cta_book">Записаться на консультацию</button>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="trust" id="trust">
+        <div class="trust-content">
+            <h2 data-key="trust_title">Почему выбирают нас</h2>
+            <div class="trust-items">
+                <div class="trust-item">
+                    <h3 data-key="trust_1_title">Опыт</h3>
+                    <p data-key="trust_1_text">Более 10 лет работы в сфере восстановления волос</p>
+                </div>
+                <div class="trust-item">
+                    <h3 data-key="trust_2_title">Качество</h3>
+                    <p data-key="trust_2_text">Используем только премиум материалы и оборудование</p>
+                </div>
+                <div class="trust-item">
+                    <h3 data-key="trust_3_title">Результат</h3>
+                    <p data-key="trust_3_text">Видимые результаты после первой процедуры</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-content">
+            <h2 data-key="services_title">Наши услуги</h2>
+            <div class="services-grid">
+                <!-- Кератин -->
+                <div class="service-card">
+                    <h3 data-key="service_1_title">Кератин</h3>
+                    <div class="technique" data-key="service_1_technique">Горячая реконструкция волос</div>
+                    <div class="description" data-key="service_1_desc">Процедура направлена на дисциплину, гладкость, уменьшение пушистости и визуальное уплотнение волос.</div>
+                    <div class="benefits-title" data-key="service_1_for">Подходит для:</div>
+                    <div class="benefits" data-key="service_1_for_text">Пористых, непослушных, вьющихся и пушащихся волос</div>
+                    <div class="benefits-title" data-key="service_1_result">Результат:</div>
+                    <div class="benefits" data-key="service_1_result_text">Более гладкое полотно волос, выраженный блеск, облегчение укладки и снижение пушистости</div>
+                    <div class="price" data-key="service_1_price">от 60 €</div>
+                </div>
+
+                <!-- Ботокс -->
+                <div class="service-card">
+                    <h3 data-key="service_2_title">Ботокс для волос</h3>
+                    <div class="technique" data-key="service_2_technique">Теплая реконструкция волос</div>
+                    <div class="description" data-key="service_2_desc">Процедура направлена на мягкость, блеск, эластичность и ухоженный вид без выраженного эффекта жесткого выпрямления.</div>
+                    <div class="benefits-title" data-key="service_2_for">Подходит для:</div>
+                    <div class="benefits" data-key="service_2_for_text">Сухих, тусклых и поврежденных волос</div>
+                    <div class="benefits-title" data-key="service_2_result">Результат:</div>
+                    <div class="benefits" data-key="service_2_result_text">Мягкость, блеск, плотность, ухоженный внешний вид и более легкое расчесывание</div>
+                    <div class="price" data-key="service_2_price">от 60 €</div>
+                </div>
+
+                <!-- Холодное восстановление -->
+                <div class="service-card">
+                    <h3 data-key="service_3_title">Холодное восстановление</h3>
+                    <div class="technique" data-key="service_3_technique">Бережная уходовая процедура</div>
+                    <div class="description" data-key="service_3_desc">Направлена на увлажнение, питание и укрепление структуры волос без горячей техники.</div>
+                    <div class="benefits-title" data-key="service_3_for">Подходит для:</div>
+                    <div class="benefits" data-key="service_3_for_text">Ослабленных, ломких, окрашенных и поврежденных волос</div>
+                    <div class="benefits-title" data-key="service_3_result">Результат:</div>
+                    <div class="benefits" data-key="service_3_result_text">Волосы становятся более мягкими, напитанными, эластичными и визуально более здоровыми</div>
+                    <div class="price" data-key="service_3_price">от 30 €</div>
+                </div>
+
+                <!-- Пилинг кожи головы -->
+                <div class="service-card">
+                    <h3 data-key="service_4_title">Пилинг кожи головы</h3>
+                    <div class="technique" data-key="service_4_technique">Глубокое очищение</div>
+                    <div class="description" data-key="service_4_desc">Процедура глубокого очищения кожи головы от себума, остатков стайлинга и загрязнений.</div>
+                    <div class="benefits-title" data-key="service_4_for">Подходит как:</div>
+                    <div class="benefits" data-key="service_4_for_text">Дополнительный уход для ощущения свежести и легкости у корней</div>
+                    <div class="benefits-title" data-key="service_4_result">Результат:</div>
+                    <div class="benefits" data-key="service_4_result_text">Чистота, свежесть, легкость у корней и более комфортное состояние кожи головы</div>
+                    <div class="price" data-key="service_4_price">от 50 €</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery" id="gallery">
+        <div class="gallery-content">
+            <h2 data-key="gallery_title">Портфолио работ</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/work-1.png" alt="Work 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-2.png" alt="Work 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-3.png" alt="Work 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-4.png" alt="Work 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-5.png" alt="Work 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-6.png" alt="Work 6">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/work-7.png" alt="Work 7">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="pricing" id="pricing">
+        <div class="pricing-content">
+            <h2 data-key="pricing_title">Прайс-лист</h2>
+            <div class="pricing-table">
+                <div class="pricing-row header">
+                    <div data-key="pricing_service">Услуга</div>
+                    <div class="pricing-price" data-key="pricing_cost">Стоимость</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_1_name">Кератин (короткие волосы)</div>
+                    <div class="pricing-price" data-key="pricing_1_price">от 60 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_2_name">Кератин (средняя длина)</div>
+                    <div class="pricing-price" data-key="pricing_2_price">от 80 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_3_name">Кератин (длинные волосы)</div>
+                    <div class="pricing-price" data-key="pricing_3_price">от 100 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_4_name">Кератин (очень длинные)</div>
+                    <div class="pricing-price" data-key="pricing_4_price">от 150 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_5_name">Ботокс (короткие волосы)</div>
+                    <div class="pricing-price" data-key="pricing_5_price">от 60 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_6_name">Ботокс (средняя длина)</div>
+                    <div class="pricing-price" data-key="pricing_6_price">от 80 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_7_name">Ботокс (длинные волосы)</div>
+                    <div class="pricing-price" data-key="pricing_7_price">от 100 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_8_name">Ботокс (очень длинные)</div>
+                    <div class="pricing-price" data-key="pricing_8_price">от 150 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_9_name">Холодное восстановление (короткие)</div>
+                    <div class="pricing-price" data-key="pricing_9_price">от 30 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_10_name">Холодное восстановление (средняя длина)</div>
+                    <div class="pricing-price" data-key="pricing_10_price">от 50 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_11_name">Холодное восстановление (длинные)</div>
+                    <div class="pricing-price" data-key="pricing_11_price">от 70 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_12_name">Холодное восстановление (очень длинные)</div>
+                    <div class="pricing-price" data-key="pricing_12_price">от 90 €</div>
+                </div>
+                <div class="pricing-row">
+                    <div data-key="pricing_13_name">Пилинг кожи головы</div>
+                    <div class="pricing-price" data-key="pricing_13_price">от 50 €</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 20px; color: var(--text-light); font-size: 12px;" data-key="pricing_note">* Финальная стоимость определяется индивидуально после консультации и диагностики волос</p>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2 data-key="final_cta_title">Готовы к трансформации?</h2>
+            <p data-key="final_cta_text">Запишитесь на консультацию и начните путь к здоровым, красивым волосам</p>
+            <button class="cta-button-light" data-key="cta_contact">Связаться с Ириной</button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <h3>Keratin Galicia</h3>
+            <p data-key="footer_location">Ла Коруня, Галисия</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/keratin_galicia?igsh=MXVscHg4bXl0bTJ6aw%3D%3D&utm_source=qr" target="_blank" data-key="footer_instagram">Instagram</a>
+            </div>
+            <p data-key="footer_copyright">&copy; 2024 Keratin Galicia. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Translations
+        const translations = {
+            ru: {
+                nav_about: "О процедурах",
+                nav_services: "Услуги",
+                nav_gallery: "Портфолио",
+                nav_pricing: "Цены",
+                hero_title: "Восстановление волос методом кератина",
+                hero_subtitle: "Профессиональное восстановление волос с использованием премиум материалов в Ла Коруньи",
+                cta_book: "Записаться на консультацию",
+                trust_title: "Почему выбирают нас",
+                trust_1_title: "Диагностика",
+                trust_1_text: "Перед процедурой проводим полную диагностику состояния волос",
+                trust_2_title: "Индивидуальный подход",
+                trust_2_text: "Подбираем состав и технику для каждого клиента",
+                trust_3_title: "Премиум материалы",
+                trust_3_text: "Используем только безопасные и качественные материалы",
+                services_title: "Наши услуги",
+                
+                service_1_title: "Кератин",
+                service_1_technique: "Горячая реконструкция волос",
+                service_1_desc: "Процедура направлена на дисциплину, гладкость, уменьшение пушистости и визуальное уплотнение волос.",
+                service_1_for: "Подходит для:",
+                service_1_for_text: "Пористых, непослушных, вьющихся и пушащихся волос",
+                service_1_result: "Результат:",
+                service_1_result_text: "Более гладкое полотно волос, выраженный блеск, облегчение укладки и снижение пушистости",
+                service_1_price: "от 60 €",
+                
+                service_2_title: "Ботокс для волос",
+                service_2_technique: "Теплая реконструкция волос",
+                service_2_desc: "Процедура направлена на мягкость, блеск, эластичность и ухоженный вид без выраженного эффекта жесткого выпрямления.",
+                service_2_for: "Подходит для:",
+                service_2_for_text: "Сухих, тусклых и поврежденных волос",
+                service_2_result: "Результат:",
+                service_2_result_text: "Мягкость, блеск, плотность, ухоженный внешний вид и более легкое расчесывание",
+                service_2_price: "от 60 €",
+                
+                service_3_title: "Холодное восстановление",
+                service_3_technique: "Бережная уходовая процедура",
+                service_3_desc: "Направлена на увлажнение, питание и укрепление структуры волос без горячей техники.",
+                service_3_for: "Подходит для:",
+                service_3_for_text: "Ослабленных, ломких, окрашенных и поврежденных волос",
+                service_3_result: "Результат:",
+                service_3_result_text: "Волосы становятся более мягкими, напитанными, эластичными и визуально более здоровыми",
+                service_3_price: "от 30 €",
+                
+                service_4_title: "Пилинг кожи головы",
+                service_4_technique: "Глубокое очищение",
+                service_4_desc: "Процедура глубокого очищения кожи головы от себума, остатков стайлинга и загрязнений.",
+                service_4_for: "Подходит как:",
+                service_4_for_text: "Дополнительный уход для ощущения свежести и легкости у корней",
+                service_4_result: "Результат:",
+                service_4_result_text: "Чистота, свежесть, легкость у корней и более комфортное состояние кожи головы",
+                service_4_price: "от 50 €",
+                
+                gallery_title: "Портфолио работ",
+                pricing_title: "Прайс-лист",
+                pricing_service: "Услуга",
+                pricing_cost: "Стоимость",
+                pricing_1_name: "Кератин (короткие волосы)",
+                pricing_1_price: "от 60 €",
+                pricing_2_name: "Кератин (средняя длина)",
+                pricing_2_price: "от 80 €",
+                pricing_3_name: "Кератин (длинные волосы)",
+                pricing_3_price: "от 100 €",
+                pricing_4_name: "Кератин (очень длинные)",
+                pricing_4_price: "от 150 €",
+                pricing_5_name: "Ботокс (короткие волосы)",
+                pricing_5_price: "от 60 €",
+                pricing_6_name: "Ботокс (средняя длина)",
+                pricing_6_price: "от 80 €",
+                pricing_7_name: "Ботокс (длинные волосы)",
+                pricing_7_price: "от 100 €",
+                pricing_8_name: "Ботокс (очень длинные)",
+                pricing_8_price: "от 150 €",
+                pricing_9_name: "Холодное восстановление (короткие)",
+                pricing_9_price: "от 30 €",
+                pricing_10_name: "Холодное восстановление (средняя длина)",
+                pricing_10_price: "от 50 €",
+                pricing_11_name: "Холодное восстановление (длинные)",
+                pricing_11_price: "от 70 €",
+                pricing_12_name: "Холодное восстановление (очень длинные)",
+                pricing_12_price: "от 90 €",
+                pricing_13_name: "Пилинг кожи головы",
+                pricing_13_price: "от 50 €",
+                pricing_note: "* Финальная стоимость определяется индивидуально после консультации и диагностики волос",
+                final_cta_title: "Не уверены, какая процедура подойдет?",
+                final_cta_text: "Напишите в Instagram — я помогу подобрать уход после консультации и диагностики волос",
+                cta_contact: "Записаться в Instagram",
+                footer_location: "Ла Коруня, Галисия",
+                footer_instagram: "Instagram",
+                footer_whatsapp: "WhatsApp",
+                footer_copyright: "© 2024 Keratin Galicia. Все права защищены."
+            },
+            en: {
+                nav_about: "About Procedures",
+                nav_services: "Services",
+                nav_gallery: "Portfolio",
+                nav_pricing: "Pricing",
+                hero_title: "Hair Restoration with Keratin",
+                hero_subtitle: "Professional hair restoration using premium materials in La Coruña",
+                cta_book: "Book a Consultation",
+                trust_title: "Why Choose Us",
+                trust_1_title: "Diagnosis",
+                trust_1_text: "We perform a complete hair diagnosis before each procedure",
+                trust_2_title: "Individual Approach",
+                trust_2_text: "We select the composition and technique for each client",
+                trust_3_title: "Premium Materials",
+                trust_3_text: "We use only safe and high-quality materials",
+                services_title: "Our Services",
+                
+                service_1_title: "Keratin",
+                service_1_technique: "Hot hair reconstruction",
+                service_1_desc: "This procedure is aimed at discipline, smoothness, reducing frizz and visual hair thickening.",
+                service_1_for: "Best for:",
+                service_1_for_text: "Porous, unruly, curly and frizzy hair",
+                service_1_result: "Result:",
+                service_1_result_text: "Smoother hair, pronounced shine, easier styling and reduced frizz",
+                service_1_price: "from 60 €",
+                
+                service_2_title: "Hair Botox",
+                service_2_technique: "Warm hair reconstruction",
+                service_2_desc: "This procedure aims for softness, shine, elasticity and a well-groomed look without a pronounced straightening effect.",
+                service_2_for: "Best for:",
+                service_2_for_text: "Dry, dull and damaged hair",
+                service_2_result: "Result:",
+                service_2_result_text: "Softness, shine, density, well-groomed appearance and easier combing",
+                service_2_price: "from 60 €",
+                
+                service_3_title: "Cold Recovery",
+                service_3_technique: "Gentle care procedure",
+                service_3_desc: "Aimed at moisturizing, nourishing and strengthening hair structure without hot techniques.",
+                service_3_for: "Best for:",
+                service_3_for_text: "Weakened, brittle, colored and damaged hair",
+                service_3_result: "Result:",
+                service_3_result_text: "Hair becomes softer, nourished, more elastic and visually healthier",
+                service_3_price: "from 30 €",
+                
+                service_4_title: "Scalp Peeling",
+                service_4_technique: "Deep cleansing",
+                service_4_desc: "A deep cleansing procedure of the scalp from sebum, styling residues and dirt.",
+                service_4_for: "Best as:",
+                service_4_for_text: "Additional care for a feeling of freshness and lightness at the roots",
+                service_4_result: "Result:",
+                service_4_result_text: "Cleanliness, freshness, lightness at the roots and more comfortable scalp condition",
+                service_4_price: "from 50 €",
+                
+                gallery_title: "Portfolio",
+                pricing_title: "Price List",
+                pricing_service: "Service",
+                pricing_cost: "Price",
+                pricing_1_name: "Keratin (short hair)",
+                pricing_1_price: "from 60 €",
+                pricing_2_name: "Keratin (medium length)",
+                pricing_2_price: "from 80 €",
+                pricing_3_name: "Keratin (long hair)",
+                pricing_3_price: "from 100 €",
+                pricing_4_name: "Keratin (very long)",
+                pricing_4_price: "from 150 €",
+                pricing_5_name: "Hair Botox (short hair)",
+                pricing_5_price: "from 60 €",
+                pricing_6_name: "Hair Botox (medium length)",
+                pricing_6_price: "from 80 €",
+                pricing_7_name: "Hair Botox (long hair)",
+                pricing_7_price: "from 100 €",
+                pricing_8_name: "Hair Botox (very long)",
+                pricing_8_price: "from 150 €",
+                pricing_9_name: "Cold Recovery (short hair)",
+                pricing_9_price: "from 30 €",
+                pricing_10_name: "Cold Recovery (medium length)",
+                pricing_10_price: "from 50 €",
+                pricing_11_name: "Cold Recovery (long hair)",
+                pricing_11_price: "from 70 €",
+                pricing_12_name: "Cold Recovery (very long)",
+                pricing_12_price: "from 90 €",
+                pricing_13_name: "Scalp Peeling",
+                pricing_13_price: "from 50 €",
+                pricing_note: "* Final price is determined individually after consultation and hair diagnosis",
+                final_cta_title: "Not sure which procedure is right for you?",
+                final_cta_text: "Write to Instagram — I will help you choose the right care after consultation and hair diagnosis",
+                cta_contact: "Book in Instagram",
+                footer_location: "La Coruña, Galicia",
+                footer_instagram: "Instagram",
+                footer_whatsapp: "WhatsApp",
+                footer_copyright: "© 2024 Keratin Galicia. All rights reserved."
+            },
+            es: {
+                nav_about: "Sobre los Procedimientos",
+                nav_services: "Servicios",
+                nav_gallery: "Galería",
+                nav_pricing: "Precios",
+                hero_title: "Restauración de Cabello con Queratina",
+                hero_subtitle: "Restauración profesional de cabello con materiales premium en La Coruña",
+                cta_book: "Reservar Consulta",
+                trust_title: "Por Qué Elegirnos",
+                trust_1_title: "Diagnóstico",
+                trust_1_text: "Realizamos un diagnóstico completo del cabello antes de cada procedimiento",
+                trust_2_title: "Enfoque Individual",
+                trust_2_text: "Seleccionamos la composición y técnica para cada cliente",
+                trust_3_title: "Materiales Premium",
+                trust_3_text: "Utilizamos solo materiales seguros y de alta calidad",
+                services_title: "Nuestros Servicios",
+                
+                service_1_title: "Queratina",
+                service_1_technique: "Reconstrucción capilar en caliente",
+                service_1_desc: "Este procedimiento está dirigido a la disciplina, suavidad, reducción de encrespamiento y engrosamiento visual del cabello.",
+                service_1_for: "Ideal para:",
+                service_1_for_text: "Cabello poroso, rebelde, rizado y encrespado",
+                service_1_result: "Resultado:",
+                service_1_result_text: "Cabello más liso, brillo pronunciado, peinado más fácil y reducción de encrespamiento",
+                service_1_price: "desde 60 €",
+                
+                service_2_title: "Botox Capilar",
+                service_2_technique: "Reconstrucción capilar en calor templado",
+                service_2_desc: "Este procedimiento apunta a la suavidad, brillo, elasticidad y apariencia arreglada sin efecto de alisado pronunciado.",
+                service_2_for: "Ideal para:",
+                service_2_for_text: "Cabello seco, opaco y dañado",
+                service_2_result: "Resultado:",
+                service_2_result_text: "Suavidad, brillo, densidad, apariencia arreglada y cepillado más fácil",
+                service_2_price: "desde 60 €",
+                
+                service_3_title: "Recuperación Fría",
+                service_3_technique: "Procedimiento de cuidado suave",
+                service_3_desc: "Dirigida a la hidratación, nutrición y fortalecimiento de la estructura del cabello sin técnicas de calor.",
+                service_3_for: "Ideal para:",
+                service_3_for_text: "Cabello debilitado, frágil, teñido y dañado",
+                service_3_result: "Resultado:",
+                service_3_result_text: "El cabello se vuelve más suave, nutrido, elástico y visualmente más saludable",
+                service_3_price: "desde 30 €",
+                
+                service_4_title: "Peeling del Cuero Cabelludo",
+                service_4_technique: "Limpieza profunda",
+                service_4_desc: "Un procedimiento de limpieza profunda del cuero cabelludo del sebo, residuos de estilismo y suciedad.",
+                service_4_for: "Ideal como:",
+                service_4_for_text: "Cuidado adicional para una sensación de frescura y ligereza en las raíces",
+                service_4_result: "Resultado:",
+                service_4_result_text: "Limpieza, frescura, ligereza en las raíces y cuero cabelludo más cómodo",
+                service_4_price: "desde 50 €",
+                
+                gallery_title: "Galería de Trabajos",
+                pricing_title: "Lista de Precios",
+                pricing_service: "Servicio",
+                pricing_cost: "Precio",
+                pricing_1_name: "Queratina (cabello corto)",
+                pricing_1_price: "desde 60 €",
+                pricing_2_name: "Queratina (largo medio)",
+                pricing_2_price: "desde 80 €",
+                pricing_3_name: "Queratina (cabello largo)",
+                pricing_3_price: "desde 100 €",
+                pricing_4_name: "Queratina (muy largo)",
+                pricing_4_price: "desde 150 €",
+                pricing_5_name: "Botox Capilar (cabello corto)",
+                pricing_5_price: "desde 60 €",
+                pricing_6_name: "Botox Capilar (largo medio)",
+                pricing_6_price: "desde 80 €",
+                pricing_7_name: "Botox Capilar (cabello largo)",
+                pricing_7_price: "desde 100 €",
+                pricing_8_name: "Botox Capilar (muy largo)",
+                pricing_8_price: "desde 150 €",
+                pricing_9_name: "Recuperación Fría (cabello corto)",
+                pricing_9_price: "desde 30 €",
+                pricing_10_name: "Recuperación Fría (largo medio)",
+                pricing_10_price: "desde 50 €",
+                pricing_11_name: "Recuperación Fría (cabello largo)",
+                pricing_11_price: "desde 70 €",
+                pricing_12_name: "Recuperación Fría (muy largo)",
+                pricing_12_price: "desde 90 €",
+                pricing_13_name: "Peeling del Cuero Cabelludo",
+                pricing_13_price: "desde 50 €",
+                pricing_note: "* El precio final se determina individualmente después de consulta y diagnóstico capilar",
+                final_cta_title: "¿No estás seguro de qué procedimiento es el adecuado?",
+                final_cta_text: "Escribe en Instagram — te ayudaré a elegir el cuidado adecuado después de consulta y diagnóstico capilar",
+                cta_contact: "Reservar en Instagram",
+                footer_location: "La Coruña, Galicia",
+                footer_instagram: "Instagram",
+                footer_whatsapp: "WhatsApp",
+                footer_copyright: "© 2024 Keratin Galicia. Todos los derechos reservados."
+            }
+        };
+
+        // Language Switcher
+        const langBtns = document.querySelectorAll('.lang-btn');
+        let currentLang = localStorage.getItem('language') || 'ru';
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            localStorage.setItem('language', lang);
+            
+            // Update buttons
+            langBtns.forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.lang === lang);
+            });
+
+            // Update content
+            document.querySelectorAll('[data-key]').forEach(element => {
+                const key = element.dataset.key;
+                if (translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // Update nav links
+            document.querySelector('html').lang = lang;
+        }
+
+        langBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                setLanguage(btn.dataset.lang);
+            });
+        });
+
+        // Initialize with saved language
+        setLanguage(currentLang);
+
+        // CTA Button Functionality
+        const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-light');
+        ctaButtons.forEach(btn => {
+            btn.addEventListener('click', () => {
+                window.location.href = 'https://www.instagram.com/keratin_galicia?igsh=MXVscHg4bXl0bTJ6aw%3D%3D&utm_source=qr';
+            });
+        });
+    </script>
+</body>
+</html>
